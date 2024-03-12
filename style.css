@@ -1,9 +1,10 @@
 @import url('https://fonts.googleapis.com/css2?family=Poppins:ital,wght@0,100;0,200;0,300;0,400;0,500;0,600;0,700;0,800;0,900;1,100;1,200;1,300;1,400;1,500;1,600;1,700;1,800;1,900&display=swap');
 
+
 *{
     margin: 0;
     padding: 0;
-    color:  white;
+    color:  #ffffff;
     font-family: "Poppins", sans-serif;
 
 }
@@ -38,36 +39,37 @@
 }
 
 .ball2 {
-    width: 155px;
-    height: 155px;
+    width: 200px;
+    height: 200px;
     position: relative;
-    top: -182px;
-    left: 431px;
+    top: -218px;
+    left: 323px;
     transform: rotate(-75deg);
 }
 
 .card {
     display: grid;
-    place-items: center;
+    align-content: space-around;
+    justify-items: center;
     position: relative;
     z-index: 1;
     top: -85px;
     left: 56px;
-    width: 475px;
-    height: 274px;
+    width: 413px;
+    height: 256px;
     background: #ffffff10;
     box-shadow: 0 8px 32px 0 #17614283;
-    backdrop-filter: blur(12px);
+    backdrop-filter: blur(14px);
     border-radius: 28px;
     border: 1px solid #ffffff2e;
 }
 .r{
-    border: 2px solid #00000040;
     width: 87%;
     height: 50px;
 }
 .row1{
     display: flex;
+    justify-content: space-between;
 }
 .r1-left{
     display: flex;
@@ -80,6 +82,9 @@
 .r1-left > p{
     font-weight: 400;
   
+}
+.r1-right > img{
+    height: 47px;
 }
 .row2 > .card-no-label{
     font-size: 12px;
