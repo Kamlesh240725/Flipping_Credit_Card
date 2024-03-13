@@ -1,112 +1,160 @@
-@import url('https://fonts.googleapis.com/css2?family=Poppins:ital,wght@0,100;0,200;0,300;0,400;0,500;0,600;0,700;0,800;0,900;1,100;1,200;1,300;1,400;1,500;1,600;1,700;1,800;1,900&display=swap');
+@import url("https://fonts.googleapis.com/css2?family=Poppins:ital,wght@0,100;0,200;0,300;0,400;0,500;0,600;0,700;0,800;0,900;1,100;1,200;1,300;1,400;1,500;1,600;1,700;1,800;1,900&display=swap");
 
-
-*{
-    margin: 0;
-    padding: 0;
-    color:  #ffffff;
-    font-family: "Poppins", sans-serif;
-
+* {
+  margin: 0;
+  padding: 0;
+  color: #ffffff;
+  font-family: "Poppins", sans-serif;
 }
 .page {
-    width: 100vw;
-    height: 100vh;
-    display: grid;
-    place-items: center;
-    background: linear-gradient(#176142,#082e1e);
+  width: 100vw;
+  height: 100vh;
+  display: grid;
+  place-items: center;
+  background: linear-gradient(#176142, #082e1e);
 }
 
 .container {
-    position: relative;
-    width: 586px;
-    height: 389px;
+  width: 586px;
+  height: 389px;
+  display: grid;
+  place-items: center;
+  perspective: 1000px;
 }
 
 .ball1,
 .ball2 {
-    background: linear-gradient(white, #1affa0, #00ff95);
-    border-radius: 50%;
-    box-shadow: 2px 2px 22px -6px #17614283;
+  position: absolute;
+  background: linear-gradient(white, #1affa0, #00ff95);
+  border-radius: 50%;
+  box-shadow: 2px 2px 22px -6px #17614283;
 }
 
 .ball1 {
-    width: 118px;
-    height: 118px;
-    position: relative;
-    top: -14px;
-    left: 11px;
-    transform: rotate(71deg);
+  width: 118px;
+  height: 118px;
+  transform: rotate(20deg) translate(-200px, -38px);
 }
 
 .ball2 {
-    width: 200px;
-    height: 200px;
-    position: relative;
-    top: -218px;
-    left: 323px;
-    transform: rotate(-75deg);
+  width: 200px;
+  height: 200px;
+  transform: rotate(-75deg) translate(-50px, 165px);
 }
-
-.card {
-    display: grid;
-    align-content: space-around;
-    justify-items: center;
-    position: relative;
-    z-index: 1;
-    top: -85px;
-    left: 56px;
-    width: 413px;
-    height: 256px;
-    background: #ffffff10;
-    box-shadow: 0 8px 32px 0 #17614283;
-    backdrop-filter: blur(14px);
-    border-radius: 28px;
-    border: 1px solid #ffffff2e;
+.card{
+  position: absolute;
+  width: 413px;
+  height: 256px;
+  z-index: 100;
+  display: grid;
+  place-items: center;
+  transition: 1.2s;
+  transform-style: preserve-3d;
 }
-.r{
-    width: 87%;
-    height: 50px;
+.card:hover{
+  transform: rotateY(180deg);
 }
-.row1{
-    display: flex;
-    justify-content: space-between;
+.card .front-face,.card .back-face{
+  position: absolute;
+  display: grid;
+  align-content: space-around;
+  justify-items: center;
+  width: 413px;
+  height: 256px;
+  background: #ffffff10;
+  box-shadow: 0 8px 32px 0 #17614283;
+  backdrop-filter: blur(14px);
+  border-radius: 28px;
+  border: 1px solid #ffffff2e;
+  backface-visibility: hidden;
 }
-.r1-left{
-    display: flex;
-    align-items: center;
-    height: 30px;
+.card .back-face{
+  transform: rotateY(180deg);
 }
-.r1-left > img{
-    height: 30px;
+.r {
+  width: 87%;
+  height: 50px;
 }
-.r1-left > p{
-    font-weight: 400;
-  
+.row1 {
+  display: flex;
+  justify-content: space-between;
 }
-.r1-right > img{
-    height: 47px;
+.r1-left {
+  display: flex;
+  align-items: center;
+  height: 30px;
 }
-.row2 > .card-no-label{
-    font-size: 12px;
-    font-weight: 300;
+.r1-left > img {
+  height: 30px;
 }
-.row2 > .card-no{
-    font-size: 22px;
-    font-weight: 400;
+.r1-left > p {
+  font-weight: 400;
 }
-.row3{
-    display: flex;
-    align-items: center;
-    justify-content: space-between;
+.r1-right > img {
+  height: 47px;
 }
-.r3-left{
-    font-weight: 300;
+.row2 > .card-no-label {
+  font-size: 12px;
+  font-weight: 300;
 }
-.r3-right > .exp-date-label{
-    font-size: 12px;
-    font-weight: 300;
+.row2 > .card-no {
+  font-size: 22px;
+  font-weight: 400;
 }
-.r3-right > .exp-date{
-    font-size: 18px;
+.row3 {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
 }
-
+.r3-left {
+  font-weight: 300;
+}
+.r3-right > .exp-date-label {
+  font-size: 12px;
+  font-weight: 300;
+}
+.r3-right > .exp-date {
+  font-size: 18px;
+}
+.contact-details p,.card-description p{
+  font-size: 9px;
+}
+.black-line{
+  width: 100%;
+  height: 50px;
+  background-color: black;
+}
+.cvv{
+  display: flex;
+  align-items: center;
+}
+.cvv .cvv-no-mask{
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  gap: 4px;
+  width: 285px;
+  height: 44px;
+  border-radius: 6px;
+  background-color: white;
+}
+.cvv .cvv-no-mask .cvv-no-mask-lines{
+  width: 280px;
+  height: 5px;
+  border-radius: 2px;
+  background-color: rgba(221, 221, 221, 0.811);
+}
+.cvv .cvv-no{
+  width: 34px;
+  height: 18px;
+  border-radius: 0px 4px 4px 0px;
+  background-color: white;
+  color: black;
+  text-align: left;
+  font-style: italic;
+  font-size: 12px;
+}
+.card-description{
+  width: 85%;
+}
